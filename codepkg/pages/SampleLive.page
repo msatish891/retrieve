@@ -1,0 +1,49 @@
+<apex:page showHeader="false">
+
+    <style type="text/css">
+        .button {
+        background-color:#ed8223;
+    color:#fff;
+    font-family:'Helvetica Neue',sans-serif;
+    font-size:18px;
+    line-height:30px;
+    border-radius:20px;
+    -webkit-border-radius:20px;
+    -moz-border-radius:20px;
+    border:0;
+    text-shadow:#C17C3A 0 -1px 0;
+    width:120px;
+    height:32px
+    }
+    </style>
+
+    <script type='text/javascript' src='https://c.la1t1.salesforceliveagent.com/content/g/deployment.js'></script>
+<script type='text/javascript'>
+liveagent.init('https://d.la1t1.salesforceliveagent.com/chat', '5729000000007ce', '00D90000000mwsa');
+</script>
+    <apex:form >
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+     
+
+
+
+
+<center>
+        <a id="liveagent_button_online_57390000000PGX0" href="javascript://Chat" class="button" onclick="liveagent.startChat('57390000000PGX0')">Chat Online</a>
+        <div id="liveagent_button_offline_57390000000PGX0" class="button">Chat Offline</div>
+        <script type="text/javascript">
+            if (!window._laq) { window._laq = []; }
+                window._laq.push(function(){liveagent.showWhenOnline('57390000000PGX0', document.getElementById('liveagent_button_online_57390000000PGX0'));
+                liveagent.showWhenOffline('57390000000PGX0', document.getElementById('liveagent_button_offline_57390000000PGX0'));
+            });
+        </script>
+  </center>   
+
+
+     
+        
+    </apex:form>
+</apex:page>
