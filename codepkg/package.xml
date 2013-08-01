@@ -6,7 +6,7 @@
     </types>
     <types>
         <members>*</members>
-        <name>ApexPages</name>
+        <name>ApexPage</name>
     </types>
     <version>28.0</version>
 </Package>
