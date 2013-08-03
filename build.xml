@@ -4,11 +4,6 @@
     <property environment="env"/>
 
     <!-- Test out deploy and retrieve verbs for package 'mypkg' -->
-	<target name="SampleDemo">
-		<sf:retrieve username="${sf.satishchat@gmail.com}" password="${sf.nagamani8l2mhpNq8KU3sLVO8cLRd2iD0}" serverurl="${sf.https://login.salesforce.com}" retrieveTarget="retrieveFolder" unpackaged="unpackaged/package.xml" />
-	</target>
-	
-	
 	
 	
     <target name="test">
@@ -24,7 +19,15 @@
     <target name="retrieveUnpackaged">
       <mkdir dir="retrieveUnpackaged"/>
       <!-- Retrieve the contents into another directory -->
-      <sf:retrieve username="${sf.username}" password="${sf.password}" serverurl="${sf.serverurl}" maxPoll="${sf.maxPoll}" retrieveTarget="retrieveUnpackaged" unpackaged="unpackaged/package.xml"/>
+      <sf:retrieve username="${sf.username}" password="${sf.password}" serverurl="${sf.serverurl}" maxPoll="${sf.maxPoll}" 
+	  retrieveTarget="retrieveUnpackaged" unpackaged="unpackaged/package.xml"/>
+    </target>
+	
+	 <!-- Shows deploying code & running tests for code in directory -->
+    <target name="deployCode">
+      <!-- Upload the contents of the "codepkg" directory, running the tests for just 1 class -->
+      <sf:deploy username="${sf.username}" password="${sf.password}" serverurl="${sf.serverurl}" maxPoll="${sf.maxPoll}" deployRoot="codepkg">
+      </sf:deploy>
     </target>
 
     <!-- Retrieve all the items of a particular metadata type -->
@@ -47,12 +50,7 @@
       <sf:deploy username="${sf.username}" password="${sf.password}" serverurl="${sf.serverurl}" maxPoll="${sf.maxPoll}" zipFile="${sf.zipFile}" pollWaitMillis="1000000"/>
     </target>
 
-    <!-- Shows deploying code & running tests for code in directory -->
-    <target name="deployCode">
-      <!-- Upload the contents of the "codepkg" directory, running the tests for just 1 class -->
-      <sf:deploy username="${sf.username}" password="${sf.password}" serverurl="${sf.serverurl}" maxPoll="${sf.maxPoll}" deployRoot="codepkg">
-      </sf:deploy>
-    </target>
+   
 
     <!-- Shows removing code; only succeeds if done after deployCode -->
     <target name="undeployCode">

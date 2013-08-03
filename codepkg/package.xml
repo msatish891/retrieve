@@ -4,9 +4,11 @@
         <members>*</members>
         <name>ApexClass</name>
     </types>
-    <types>
+    <!--
+	<types>
         <members>*</members>
         <name>ApexPage</name>
     </types>
+	-->
     <version>28.0</version>
 </Package>
