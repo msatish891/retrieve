@@ -19,6 +19,7 @@
     <target name="retrieveUnpackaged">
       <mkdir dir="retrieveUnpackaged"/>
       <!-- Retrieve the contents into another directory -->
+
       <sf:retrieve username="${sf.username}" password="${sf.password}" serverurl="${sf.serverurl}" maxPoll="${sf.maxPoll}" 
 	  retrieveTarget="retrieveUnpackaged" unpackaged="unpackaged/package.xml"/>
     </target>
@@ -28,6 +29,10 @@
       <!-- Upload the contents of the "codepkg" directory, running the tests for just 1 class -->
       <sf:deploy username="${sf.username}" password="${sf.password}" serverurl="${sf.serverurl}" maxPoll="${sf.maxPoll}" deployRoot="codepkg">
       </sf:deploy>
+<!--
+      <sf:retrieve username="${sf.username}" password="${sf.password}" serverurl="${sf.serverurl}" maxPoll="${sf.maxPoll}" retrieveTarget="retrieveUnpackaged" 
+	  unpackaged="unpackaged/package.xml"/>
+-->
     </target>
 
     <!-- Retrieve all the items of a particular metadata type -->
@@ -50,7 +55,17 @@
       <sf:deploy username="${sf.username}" password="${sf.password}" serverurl="${sf.serverurl}" maxPoll="${sf.maxPoll}" zipFile="${sf.zipFile}" pollWaitMillis="1000000"/>
     </target>
 
+<<<<<<< HEAD
    
+=======
+    <!-- Shows deploying code & running tests for code in directory -->
+    <target name="deployCode">
+      <!-- Upload the contents of the "codepkg" directory, running the tests for just 1 class -->
+      <sf:deploy username="${sf.username}" password="${sf.password}" serverurl="${sf.serverurl}" maxPoll="${sf.maxPoll}" deployRoot="codepkg">
+        <runTest>SampleDeployClass</runTest>
+      </sf:deploy>
+    </target>
+>>>>>>> 7617d259d4221bd12bc81bc713e36ad01afdb4b3
 
     <!-- Shows removing code; only succeeds if done after deployCode -->
     <target name="undeployCode">
